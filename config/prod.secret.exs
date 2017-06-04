@@ -14,7 +14,7 @@ config :art_platform, ArtPlatform.Endpoint,
 # Configure your database
 config :art_platform, ArtPlatform.Repo,
   adapter: Ecto.Adapters.Postgres,
-  host: "ec2-54-243-252-91.compute-1.amazonaws.com",
+  # host: "ec2-54-243-252-91.compute-1.amazonaws.com",
   username: "ozvumevkmafqjz",
   password: "74615c7bac29ea5c5f2866b29ce430f5cc3f4b0b607219d19fe5527886b67f77",
   database: "d1nv4gp1064227",
