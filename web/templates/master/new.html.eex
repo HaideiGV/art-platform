@@ -1,0 +1,6 @@
+<h2>New master</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: master_path(@conn, :create) %>
+
+<%= link "Back", to: master_path(@conn, :index) %>

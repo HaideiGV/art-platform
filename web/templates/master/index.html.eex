@@ -1,0 +1,32 @@
+<h2>Listing masters</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Skills</th>
+      <th>About me</th>
+      <th>Age</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for master <- @masters do %>
+    <tr>
+      <td><%= master.name %></td>
+      <td><%= master.skills %></td>
+      <td><%= master.about_me %></td>
+      <td><%= master.age %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: master_path(@conn, :show, master), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: master_path(@conn, :edit, master), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: master_path(@conn, :delete, master), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New master", to: master_path(@conn, :new) %>

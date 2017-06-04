@@ -1,0 +1,28 @@
+<h2>Show master</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @master.name %>
+  </li>
+
+  <li>
+    <strong>Skills:</strong>
+    <%= @master.skills %>
+  </li>
+
+  <li>
+    <strong>About me:</strong>
+    <%= @master.about_me %>
+  </li>
+
+  <li>
+    <strong>Age:</strong>
+    <%= @master.age %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: master_path(@conn, :edit, @master) %>
+<%= link "Back", to: master_path(@conn, :index) %>
