@@ -40,4 +40,5 @@ config :art_platform, ArtPlatform.Repo,
   password: "haideigv",
   database: "artplatform",
   hostname: "localhost",
-  pool_size: 10
+  pool_size: 10,
+  port: 5433
