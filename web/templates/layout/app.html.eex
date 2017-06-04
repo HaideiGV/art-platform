@@ -16,7 +16,10 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Docs</a></li>
+            <li><a href="#">Masters</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">About</a></li>
           </ul>
         </nav>
         <span class="logo"></span>
