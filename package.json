@@ -1,5 +1,10 @@
-{
-  "repository": {},
+{ 
+  "name": "artplatform",
+  "description": "a really cool app",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.9.2"
+  },
   "license": "MIT",
   "scripts": {
     "deploy": "brunch build --production",
