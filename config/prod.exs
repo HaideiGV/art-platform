@@ -13,8 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :art_platform, ArtPlatform.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "art-platform.herokuapp.com", port: 80],
-  force_ssl: [rewrite_on: [:x_forwarded_proto],
+  url: [host: "art-platform.herokuapp.com", port: 443],
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
