@@ -11,8 +11,8 @@ config :art_platform,
 
 # Configures the endpoint
 config :art_platform, ArtPlatform.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "g7pGMnZZ/2DpWnLtPpPk6RvLD9YdRFr4s+BxIfn45qwxiEgeZx1Q1oEEpxVSGcZ0",
+  url: [host: "art-platform.herokuapp.com"],
+  secret_key_base: "Hlb15l3JUDO8b7Br6qO9bKbzJRhUosREQX403bSVpTQ/Pa2ekqbYmS4Jp4T8w9Ba",
   render_errors: [view: ArtPlatform.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ArtPlatform.PubSub,
            adapter: Phoenix.PubSub.PG2]
