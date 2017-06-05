@@ -2,6 +2,7 @@ defmodule ArtPlatform.MasterController do
   use ArtPlatform.Web, :controller
 
   alias ArtPlatform.Master
+  alias ArtPlatform.Gallery
 
   def index(conn, _params) do
     masters = Repo.all(Master)

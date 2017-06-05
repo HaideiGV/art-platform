@@ -13,7 +13,4 @@ defmodule ArtPlatform.PageController do
   	render conn, "about.html"
   end
 
-  def gallery(conn, _params) do
-  	render conn, "gallery.html"
-  end
 end

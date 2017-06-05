@@ -1,0 +1,28 @@
+<h2>Show gallery</h2>
+
+<ul>
+
+  <li>
+    <strong>Master:</strong>
+    <%= @gallery.master_id %>
+  </li>
+
+  <li>
+    <strong>Image url:</strong>
+    <%= @gallery.image_url %>
+  </li>
+
+  <li>
+    <strong>Rate:</strong>
+    <%= @gallery.rate %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @gallery.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: gallery_path(@conn, :edit, @gallery) %>
+<%= link "Back", to: gallery_path(@conn, :index) %>

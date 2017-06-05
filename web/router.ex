@@ -19,9 +19,10 @@ defmodule ArtPlatform.Router do
     get "/", PageController, :index
     get "/about", PageController, :about
     get "/contacts", PageController, :contacts
-    get "/gallery", PageController, :gallery
 
     resources "/masters", MasterController
+
+    resources "/gallery", GalleryController
   end
 
   # Other scopes may use custom stacks.

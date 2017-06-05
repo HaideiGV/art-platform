@@ -1,0 +1,32 @@
+<h2>Listing gallery</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Master</th>
+      <th>Image url</th>
+      <th>Rate</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for gallery <- @gallery do %>
+    <tr>
+      <td><%= gallery.master_id %></td>
+      <td><%= gallery.image_url %></td>
+      <td><%= gallery.rate %></td>
+      <td><%= gallery.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: gallery_path(@conn, :show, gallery), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: gallery_path(@conn, :edit, gallery), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: gallery_path(@conn, :delete, gallery), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New gallery", to: gallery_path(@conn, :new) %>
