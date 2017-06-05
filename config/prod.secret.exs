@@ -18,5 +18,5 @@ config :art_platform, ArtPlatform.Repo,
   username: "xmbmqdpafmkwhz",
   password: "fe6b4e9c773393dd759df3dfc01b867f3b94866b29fd21718db19bf0109ac47b",
   database: "dcas9b2cmlvo1b",
-  pool_size: 25,
+  pool_size: 20,
   port: 5432
