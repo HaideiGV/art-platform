@@ -13,8 +13,14 @@ use Mix.Config
 # which you typically run after static files are built.
 config :art_platform, ArtPlatform.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "art-platform.herokuapp.com", port: 443],
+  url: [scheme: "https", host: "art-platform.herokuapp.com", port: 443],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   cache_static_manifest: "priv/static/manifest.json"
+
+config :art_platform, ArtPlatform.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: 20
 
 # Do not print debug messages in production
 config :logger, level: :info
