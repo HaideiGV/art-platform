@@ -1,7 +1,10 @@
 defmodule ArtPlatform.GalleryController do
   use ArtPlatform.Web, :controller
 
+  import Ecto.Query
+
   alias ArtPlatform.Gallery
+  alias ArtPlatform.Masters
 
   def index(conn, _params) do
     gallery = Repo.all(Gallery)
@@ -28,6 +31,8 @@ defmodule ArtPlatform.GalleryController do
 
   def show(conn, %{"id" => id}) do
     gallery = Repo.get!(Gallery, id)
+    # query = from master in Masters, where: master.id == ^gallery.master_id
+    # master = Repo.one query
     render(conn, "show.html", gallery: gallery)
   end
 

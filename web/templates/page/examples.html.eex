@@ -4,6 +4,6 @@
 	<title>Gallery</title>
 </head>
 <body>
-	<h1>Page gallery Art Platfrom</h1>
+	<h1 class="base-page-text">Page gallery Art Platfrom</h1>
 </body>
 </html>

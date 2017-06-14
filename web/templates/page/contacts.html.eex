@@ -4,6 +4,6 @@
 	<title>Contacts</title>
 </head>
 <body>
-	<h1>Page contacts of Art Platfrom</h1>
+	<h1 class="base-page-text">Page contacts of Art Platfrom</h1>
 </body>
 </html>

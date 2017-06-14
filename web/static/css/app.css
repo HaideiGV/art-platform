@@ -1,3 +1,49 @@
 body {
-	background-color: lightgrey;
+	background-color: grey;
+}
+
+.brand-logo{
+	text-align: left;
+}
+
+.header-link {
+	font-size: 1em;
+}
+
+.master-name{
+	text-align: center;
+	margin-left: 3em;
+	margin-top: 1em;
+}
+
+.master-container{
+	height: 10em;
+	margin-top: 2em;
+}
+
+.master-add{
+	padding-top: 1em;
+}
+
+#master-preview{
+	height:	30em;
+	width: 50em;
+	margin-bottom: 2em;
+	background-color: white;
+	border-radius: 1em;
+}
+
+.master-label{
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.master-desc{
+	text-align: left;
+}
+
+.master-image{
+	height: 20em;
+	width: 20em;
+	float: left;
 }

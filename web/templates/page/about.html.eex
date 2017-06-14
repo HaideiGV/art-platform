@@ -4,6 +4,6 @@
 	<title>About</title>
 </head>
 <body>
-	<h1>Page about Art Platfrom</h1>
+	<h1 class="base-page-text">Page about Art Platfrom</h1>
 </body>
 </html>

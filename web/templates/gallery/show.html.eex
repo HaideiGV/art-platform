@@ -4,7 +4,7 @@
 
   <li>
     <strong>Master:</strong>
-    <%= @gallery.master_id %>
+    <a href="/masters/<%= @gallery.master_id %>"><%= @gallery.master_id %></a>
   </li>
 
   <li>

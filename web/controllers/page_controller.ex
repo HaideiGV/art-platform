@@ -10,7 +10,7 @@ defmodule ArtPlatform.PageController do
   end
 
   def contacts(conn, _params) do
-  	render conn, "about.html"
+  	render conn, "contacts.html"
   end
 
 end

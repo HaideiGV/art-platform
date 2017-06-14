@@ -15,7 +15,7 @@ defmodule ArtPlatform.Gallery do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:image_url, :rate, :description])
+    |> cast(params, [:master_id, :image_url, :rate, :description])
     |> validate_required([:image_url, :rate, :description])
   end
 end

@@ -1,32 +1,22 @@
-<h2>Listing masters</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Skills</th>
-      <th>About me</th>
-      <th>Age</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for master <- @masters do %>
-    <tr>
-      <td><%= master.name %></td>
-      <td><%= master.skills %></td>
-      <td><%= master.about_me %></td>
-      <td><%= master.age %></td>
-
-      <td class="text-right">
-        <%= link "Show", to: master_path(@conn, :show, master), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: master_path(@conn, :edit, master), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: master_path(@conn, :delete, master), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<%= link "New master", to: master_path(@conn, :new) %>
+<div>
+  <div class="master-add">
+    <%= link "New", to: master_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light green"%>
+  <div>
+  <div class="master-container">
+  <%= for master <- @masters do %>
+      <div id="master-preview">
+        <div class="master-name chip">
+          <%= link master.name, to: master_path(@conn, :show, master), class: "chip" %>
+        </div>
+        <div><img class="master-image" src="http://thesweetpeople.com/wp/wp-content/uploads/2015/08/person_placeholder.png"></div>
+        <div><span class="master-label master-skills">Skills: </span><%= master.skills %></div>
+        <div><span class="master-label master-desc">Description: </span><%= master.about_me %></div>
+        <div><span class="master-label master-age">Length of work: </span><%= master.age %> years</div>
+        <div>
+          <%= link "Edit", to: master_path(@conn, :edit, master), class: "waves-effect waves-light btn green" %>
+          <%= link "Delete", to: master_path(@conn, :delete, master), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-light btn red" %>
+        </div>
+      </div>
+  <% end %>
+  </div>
+</div>
