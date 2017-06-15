@@ -1,32 +1,27 @@
-<h2>Listing gallery</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Master</th>
-      <th>Image url</th>
-      <th>Rate</th>
-      <th>Description</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<div>
+  <div class="master-add">
+    <%= link "New", to: gallery_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light green"%>
+  <div>
+<div class="master-container">
 <%= for gallery <- @gallery do %>
-    <tr>
-      <td><%= gallery.master_id %></td>
-      <td><%= gallery.image_url %></td>
-      <td><%= gallery.rate %></td>
-      <td><%= gallery.description %></td>
-
-      <td class="text-right">
-        <%= link "Show", to: gallery_path(@conn, :show, gallery), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: gallery_path(@conn, :edit, gallery), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: gallery_path(@conn, :delete, gallery), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
+    <div>
+      <div class="col s12 m12 center-align">
+        <div class="card">
+          <div class="card-image">
+            <img src="<%= gallery.image_url %>">
+            <span class="card-title red">Rate: <%= gallery.rate %></span>
+          </div>
+          <p class="lead green"><%= gallery.description %></p>
+          <div class="card-action">
+            <div class="text-right centre">
+              <%= link "Show", to: gallery_path(@conn, :show, gallery), class: "waves-effect waves-light btn green" %>
+              <%= link "Edit", to: gallery_path(@conn, :edit, gallery), class: "waves-effect waves-light btn green" %>
+              <%= link "Delete", to: gallery_path(@conn, :delete, gallery), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-light btn red" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 <% end %>
-  </tbody>
-</table>
-
-<%= link "New gallery", to: gallery_path(@conn, :new) %>
+</div>
+</div>

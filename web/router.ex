@@ -19,6 +19,7 @@ defmodule ArtPlatform.Router do
     get "/", PageController, :index
     get "/about", PageController, :about
     get "/contacts", PageController, :contacts
+    get "/masters/:id/gallery", GalleryController, :get_photo_by_master_id
 
     resources "/masters", MasterController
 

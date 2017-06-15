@@ -6,12 +6,18 @@
   <%= for master <- @masters do %>
       <div id="master-preview">
         <div class="master-name chip">
-          <%= link master.name, to: master_path(@conn, :show, master), class: "chip" %>
+          <!-- <%= link master.name, to: master_path(@conn, :show, master), class: "chip" %> -->
+          <%= master.name %>
         </div>
         <div><img class="master-image" src="http://thesweetpeople.com/wp/wp-content/uploads/2015/08/person_placeholder.png"></div>
         <div><span class="master-label master-skills">Skills: </span><%= master.skills %></div>
         <div><span class="master-label master-desc">Description: </span><%= master.about_me %></div>
         <div><span class="master-label master-age">Length of work: </span><%= master.age %> years</div>
+        <div>
+          <span class="master-label">
+            <%= link "Show gallery", to: gallery_path(@conn, :get_photo_by_master_id, master.id) %>
+          </span>
+        </div>
         <div>
           <%= link "Edit", to: master_path(@conn, :edit, master), class: "waves-effect waves-light btn green" %>
           <%= link "Delete", to: master_path(@conn, :delete, master), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-light btn red" %>

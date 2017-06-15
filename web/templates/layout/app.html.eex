@@ -15,8 +15,8 @@
   <body>
     <nav>
       <div class="nav-wrapper green">
-        <a href="#" class="brand-logo">Art Platform</a>
-        <ul class="right hide-on-med-and-down">
+        <!-- <a href="#" class="brand-logo">Art Platform</a> -->
+        <ul class="centre hide-on-med-and-down">
           <li><a class="header-link" href="/">Platform</a></li>
           <li><a class="header-link" href="/masters">Masters</a></li>
           <li><a class="header-link" href="/gallery">Gallery</a></li>

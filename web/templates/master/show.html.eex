@@ -22,6 +22,11 @@
     <%= @master.age %>
   </li>
 
+  <li>
+    <strong>Galley -> </strong>
+    <%= link "show gallery", to: gallery_path(@conn, :get_photo_by_master_id, @master.id) %>
+  </li>
+
 </ul>
 
 <%= link "Edit", to: master_path(@conn, :edit, @master) %>

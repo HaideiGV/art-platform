@@ -11,6 +11,11 @@ defmodule ArtPlatform.GalleryController do
     render(conn, "index.html", gallery: gallery)
   end
 
+  def get_photo_by_master_id(conn, %{"id" => id}) do
+    gallery = Repo.all(from g in Gallery, where: g.master_id == ^id)
+    render(conn, "index.html", gallery: gallery)
+  end
+
   def new(conn, _params) do
     changeset = Gallery.changeset(%Gallery{})
     render(conn, "new.html", changeset: changeset)
@@ -31,8 +36,6 @@ defmodule ArtPlatform.GalleryController do
 
   def show(conn, %{"id" => id}) do
     gallery = Repo.get!(Gallery, id)
-    # query = from master in Masters, where: master.id == ^gallery.master_id
-    # master = Repo.one query
     render(conn, "show.html", gallery: gallery)
   end
 
