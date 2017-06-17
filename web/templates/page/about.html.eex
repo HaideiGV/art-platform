@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>About</title>
-</head>
-<body>
-	<h1 class="base-page-text">Page about Art Platfrom</h1>
-</body>
-</html>
+<div class="central-page">
+		<h1 class="base-page-text">About Art Platfrom</h1></br>
+		<h2>For visitors:</h2>
+		On this site, you can choose a lot of art master for creating a wonderful picture on your bodies.</br>
+		<h2>For masters:</h2>
+		You can sign up on our site for populating and promoting your skills.
+		For sharing your examples of work.
+		Providing your contacts for better and quick communicating with people.</br>
+</div>

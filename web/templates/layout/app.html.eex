@@ -14,9 +14,8 @@
 
   <body>
     <nav>
-      <div class="nav-wrapper green">
-        <!-- <a href="#" class="brand-logo">Art Platform</a> -->
-        <ul class="centre hide-on-med-and-down">
+      <div class="nav green">
+        <ul class="centre">
           <li><a class="header-link" href="/">Platform</a></li>
           <li><a class="header-link" href="/masters">Masters</a></li>
           <li><a class="header-link" href="/gallery">Gallery</a></li>
@@ -35,7 +34,7 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-    </div> <!-- /container -->
+    </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
