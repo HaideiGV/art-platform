@@ -5,11 +5,15 @@
       <button class="btn dropdown-toggle green" type="button" data-toggle="dropdown">Filter by city
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <%= for master <- @all_masters do %>
-          <li>
-            <%= link master.city, to: master_path(@conn, :get_masters_by_city, master.city) %>
-          </li>
-        <%= end %>
+        <% if @all_masters do %>
+          <%= for master <- @all_masters do %>
+            <li>
+              <%= link master.city, to: master_path(@conn, :get_masters_by_city, master.city) %>
+            </li>
+          <%= end %>
+        <% else %>
+            <li>Empty</li>
+        <% end %>
       </ul>
     </span>
 
