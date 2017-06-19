@@ -62,4 +62,12 @@ defmodule ArtPlatform.MasterController do
     |> put_flash(:info, "Master deleted successfully.")
     |> redirect(to: master_path(conn, :index))
   end
+
+  def get_masters_by_city(conn, %{"city" => city}) do
+    all_masters = Repo.all(from m in Master, distinct: :city)
+    masters = Repo.all(from m in Master, where: m.city == ^city)
+
+    render conn, "index.html", masters: masters, all_masters: all_masters
+  end
+
 end

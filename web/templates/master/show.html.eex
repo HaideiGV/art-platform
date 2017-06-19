@@ -23,6 +23,16 @@
   </li>
 
   <li>
+    <strong>City:</strong>
+    <%= @master.city %>
+  </li>
+
+  <li>
+    <strong>Rank:</strong>
+    <%= @master.rank %>
+  </li>
+
+  <li>
     <strong>Galley -> </strong>
     <%= link "show gallery", to: gallery_path(@conn, :get_photo_by_master_id, @master.id) %>
   </li>

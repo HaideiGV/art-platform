@@ -1,22 +1,43 @@
 <div>
   <div class="master-add">
     <%= link "New", to: master_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light green"%>
+    <span class="dropdown">
+      <button class="btn dropdown-toggle green" type="button" data-toggle="dropdown">Filter by city
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <%= for master <- @all_masters do %>
+          <li>
+            <%= link master.city, to: master_path(@conn, :get_masters_by_city, master.city) %>
+          </li>
+        <%= end %>
+      </ul>
+    </span>
+
   <div>
   <div class="master-container">
   <%= for master <- @masters do %>
-      <div id="master-preview">
+      <div class="master-preview">
         <div class="master-name chip">
-          <!-- <%= link master.name, to: master_path(@conn, :show, master), class: "chip" %> -->
           <%= master.name %>
         </div>
-        <div><img class="master-image" src="http://thesweetpeople.com/wp/wp-content/uploads/2015/08/person_placeholder.png"></div>
-        <div><span class="master-label master-skills">Skills: </span><%= master.skills %></div>
-        <div><span class="master-label master-desc">Description: </span><%= master.about_me %></div>
-        <div><span class="master-label master-age">Length of work: </span><%= master.age %> years</div>
         <div>
-          <span class="master-label">
-            <%= link "Show gallery", to: gallery_path(@conn, :get_photo_by_master_id, master.id) %>
-          </span>
+          <img class="master-image" src="http://thesweetpeople.com/wp/wp-content/uploads/2015/08/person_placeholder.png">
+        </div>
+        <div class="master-desc-area">
+          <div><span class="master-label master-skills">Skills: </span><%= master.skills %></div>
+          <div><span class="master-label master-desc">Description: </span><%= master.about_me %></div>
+          <div><span class="master-label master-age">Length of work: </span><%= master.age %> years</div>
+          <div>
+            <span class="master-label">Rank: </span><%= master.rank %>
+            <span><a class="rank-label-up" href="#">&#8679;</a></span>
+            <span><a class="rank-label-down" href="#">&#8681;</a></span>
+          </div>
+          <div><span class="master-label">City: </span><%= master.city %></div>
+          <div>
+            <span class="master-label">
+              <%= link "Show gallery", to: gallery_path(@conn, :get_photo_by_master_id, master.id) %>
+            </span>
+          </div>
         </div>
         <div>
           <%= link "Edit", to: master_path(@conn, :edit, master), class: "waves-effect waves-light btn green" %>

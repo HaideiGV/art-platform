@@ -6,6 +6,8 @@ defmodule ArtPlatform.Master do
     field :skills, :string
     field :about_me, :string
     field :age, :integer
+    field :city, :string
+    field :rank, :integer
 
     timestamps()
   end
@@ -15,7 +17,7 @@ defmodule ArtPlatform.Master do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :skills, :about_me, :age])
-    |> validate_required([:name, :skills, :about_me, :age])
+    |> cast(params, [:name, :skills, :about_me, :age, :city, :rank])
+    |> validate_required([:name, :skills, :about_me, :age, :city, :rank])
   end
 end

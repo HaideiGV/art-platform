@@ -25,12 +25,21 @@ body {
 	padding-top: 1em;
 }
 
-#master-preview{
-	height:	30em;
-	width: 50em;
+.master-preview{
+	height:	auto;
+	width: auto;
+	min-width: 20em;
+	min-height: 20em;
 	margin-bottom: 2em;
 	background-color: white;
 	border-radius: 1em;
+	padding-left: 2em;
+	padding-top: 1em;
+	padding-right: 1em;
+	padding-bottom: 2em;
+}
+.master-desc-area{
+	margin-left: 10em;
 }
 
 .master-label{
@@ -43,8 +52,8 @@ body {
 }
 
 .master-image{
-	height: 20em;
-	width: 20em;
+	height: 15em;
+	width: 15em;
 	float: left;
 }
 
@@ -53,5 +62,14 @@ body {
 	padding-top: 10em;
 }
 
-.contact-form{
+.rank-label-up{
+	font-size: 18px;
+	font-weight: bold;
+	color: green;
+}
+
+.rank-label-down{
+	font-size: 18px;
+	font-weight: bold;
+	color: red;
 }

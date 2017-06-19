@@ -2,7 +2,7 @@ defmodule ArtPlatform.Router do
   use ArtPlatform.Web, :router
 
   pipeline :browser do
-    plug :accepts, ["html", "jpg"]
+    plug :accepts, ["html", "jpg", "json"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
@@ -20,6 +20,7 @@ defmodule ArtPlatform.Router do
     get "/about", PageController, :about
     get "/contacts", PageController, :contacts
     get "/masters/:id/gallery", GalleryController, :get_photo_by_master_id
+    get "/masters/:city", MasterController, :get_masters_by_city
 
     resources "/masters", MasterController
 
