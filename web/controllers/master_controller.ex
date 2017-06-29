@@ -6,11 +6,7 @@ defmodule ArtPlatform.MasterController do
     masters = Repo.all(Master)
     all_masters = from m in Master, distinct: :city, select: m.city
     cities = Repo.all(all_masters)
-    if cities do
-      render(conn, "index.html", masters: masters, cities: cities)
-    else
-      render(conn, "index.html", masters: masters, cities: %{})
-    end
+    render(conn, "index.html", masters: masters, cities: nil)
   end
 
   def new(conn, _params) do
