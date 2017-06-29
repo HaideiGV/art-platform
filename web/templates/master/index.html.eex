@@ -1,23 +1,20 @@
 <div>
   <div class="master-add">
     <%= link "New", to: master_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light green"%>
-    <span class="dropdown">
+  </div>
+  <%= if @cities do %>
+    <div class="dropdown">
       <button class="btn dropdown-toggle green" type="button" data-toggle="dropdown">Filter by city
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <% if @all_masters do %>
-          <%= for master <- @all_masters do %>
+          <%= for city <- @cities do %>
             <li>
-              <%= link master.city, to: master_path(@conn, :get_masters_by_city, master.city) %>
+              <%= link city, to: master_path(@conn, :get_masters_by_city, city) %>
             </li>
-          <%= end %>
-        <% else %>
-            <li>Empty</li>
-        <% end %>
+          <% end %>
       </ul>
-    </span>
-
-  <div>
+    </div>
+  <% end %>
   <div class="master-container">
   <%= for master <- @masters do %>
       <div class="master-preview">

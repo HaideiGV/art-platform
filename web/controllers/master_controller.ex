@@ -1,12 +1,12 @@
 defmodule ArtPlatform.MasterController do
   use ArtPlatform.Web, :controller
-
   alias ArtPlatform.Master
 
   def index(conn, _params) do
     masters = Repo.all(Master)
-    all_masters = Repo.all(from m in Master, distinct: :city)
-    render(conn, "index.html", masters: masters, all_masters: all_masters)
+    all_masters = from m in Master, distinct: :city, select: m.city
+    cities = Repo.all(all_masters)
+    render(conn, "index.html", masters: masters, cities: cities)
   end
 
   def new(conn, _params) do
@@ -65,10 +65,11 @@ defmodule ArtPlatform.MasterController do
   end
 
   def get_masters_by_city(conn, %{"city" => city}) do
-    all_masters = Repo.all(from m in Master, distinct: :city)
+    all_masters = from m in Master, distinct: :city, select: m.city
+    cities = Repo.all(all_masters)
     masters = Repo.all(from m in Master, where: m.city == ^city)
 
-    render conn, "index.html", masters: masters, all_masters: all_masters
+    render conn, "index.html", masters: masters, cities: cities
   end
 
 end

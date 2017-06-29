@@ -1,6 +1,6 @@
 <div>
   <div class="master-add">
-    <%= link "New", to: gallery_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light green"%>
+    <%= link "New", to: gallery_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light green" %>
   <div>
 <div class="master-container">
 <%= for gallery <- @gallery do %>
@@ -9,7 +9,7 @@
         <div class="card">
           <div class="card-image">
             <img src="<%= gallery.image_url %>">
-            <span class="card-title red">Rate: <%= gallery.rate %></span>
+            <span class="card-title green">Rate: <%= gallery.rate %></span>
           </div>
           <p class="lead green"><%= gallery.description %></p>
           <div class="card-action">
