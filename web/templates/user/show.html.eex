@@ -1,0 +1,5 @@
+<div class="user-profile">
+  <h2>Name: <%= @user.username %></h2>
+  <p>Email: <%= @user.email %></p>
+  <p>Permission: <%= @user.role %></p>
+</div>

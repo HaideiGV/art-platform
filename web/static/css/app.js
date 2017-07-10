@@ -68,5 +68,13 @@ export default StyleSheet.create({
   'top-5-images-header': {
     textAlign: 'center',
     fontWeight: 'lighter'
+  },
+  'user-profile': {
+    marginTop: [{ unit: 'em', value: 5 }],
+    paddingTop: [{ unit: 'em', value: 2 }],
+    paddingLeft: [{ unit: 'em', value: 2 }],
+    paddingBottom: [{ unit: 'em', value: 1 }],
+    borderRadius: '2em',
+    border: [{ unit: 'string', value: 'dotted' }]
   }
 });

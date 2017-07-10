@@ -3,6 +3,7 @@ defmodule ArtPlatform.MasterController do
   alias ArtPlatform.Master
 
   def index(conn, _params) do
+    # IO.puts(conn)
     masters = Repo.all(Master)
     all_masters = from m in Master, distinct: :city, select: m.city
     cities = Repo.all(all_masters)
