@@ -29,20 +29,21 @@ defmodule ArtPlatform.Router do
     get "/contacts", PageController, :contacts
     get "/masters/:id/gallery", GalleryController, :get_photo_by_master_id
     get "/masters/city/:city", MasterController, :get_masters_by_city
-
-    resources "/masters", MasterController
-    resources "/gallery", GalleryController
-
+    get "/masters", MasterController, :index
+    get "/gallery", GalleryController, :index
   end
 
   # Other scopes may use custom stacks.
   scope "/api", ArtPlatform do
     pipe_through [:api, :browser, :with_session]
 
-    resources "/users", UserController
+    post "/masters/:id/up", MastersController, :rank_up
+    post "/masters/:id/down", MastersController, :rank_down
 
-    resources "/sessions", SessionController, only: [:new, :create,
-                                                   :delete]
+    resources "/users", UserController
+    resources "/masters", MasterController
+    resources "/gallery", GalleryController
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
 
   end
 end

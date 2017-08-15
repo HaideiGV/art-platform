@@ -3,7 +3,6 @@ defmodule ArtPlatform.MasterController do
   alias ArtPlatform.Master
 
   def index(conn, _params) do
-    # IO.puts(conn)
     masters = Repo.all(Master)
     all_masters = from m in Master, distinct: :city, select: m.city
     cities = Repo.all(all_masters)
@@ -39,7 +38,7 @@ defmodule ArtPlatform.MasterController do
     render(conn, "edit.html", master: master, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "master" => master_params}) do
+  def update(conn, %{"id" => id, "master" => master_params, "action" => action}) do
     master = Repo.get!(Master, id)
     changeset = Master.changeset(master, master_params)
 
@@ -71,6 +70,36 @@ defmodule ArtPlatform.MasterController do
     masters = Repo.all(from m in Master, where: m.city == ^city)
 
     render conn, "index.html", masters: masters, cities: cities
+  end
+
+
+  def rank_up(conn, %{"id" => id}) do
+    master = Repo.get!(Master, id)
+    changeset = Master.changeset(master, %{"rank" => master.rank + 1})
+
+    case Repo.update(changeset) do
+      masters = Repo.all(Master)
+      {:ok, master} ->
+        conn
+        |> put_flash(:info, "Rank updated successfully.")
+        |> render("index.html", masters: masters, changeset: changeset)
+      {:error, changeset} ->
+        render(conn, "index.html", masters: masters, changeset: changeset)
+    end
+  end
+
+  def rank_down(conn, %{"id" => id, "master" => master_params, "action" => action}) do
+    master = Repo.get!(Master, id)
+    changeset = Master.changeset(master, master_params)
+
+    case Repo.update(changeset) do
+      {:ok, master} ->
+        conn
+        |> put_flash(:info, "Rank updated successfully.")
+        |> redirect(to: master_path(conn, :show, master))
+      {:error, changeset} ->
+        render(conn, "edit.html", master: master, changeset: changeset)
+    end
   end
 
 end
