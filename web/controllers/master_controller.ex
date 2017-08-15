@@ -78,12 +78,13 @@ defmodule ArtPlatform.MasterController do
     changeset = Master.changeset(master, %{"rank" => master.rank + 1})
 
     case Repo.update(changeset) do
-      masters = Repo.all(Master)
       {:ok, master} ->
+        masters = Repo.all(Master)
         conn
         |> put_flash(:info, "Rank updated successfully.")
         |> render("index.html", masters: masters, changeset: changeset)
       {:error, changeset} ->
+        masters = Repo.all(Master)
         render(conn, "index.html", masters: masters, changeset: changeset)
     end
   end

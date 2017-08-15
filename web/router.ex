@@ -13,18 +13,10 @@ defmodule ArtPlatform.Router do
     plug :accepts, ["json"]
   end
 
-  pipeline :with_session do
-    plug Guardian.Plug.VerifySession
-    plug Guardian.Plug.LoadResource
-    plug ArtPlatform.CurrentUser
-  end
-
   scope "/", ArtPlatform do
-    pipe_through [:browser, :with_session] # Use the default browser stack
+    pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/login", UserController, :login
-    get "/logout", UserController, :logout
     get "/about", PageController, :about
     get "/contacts", PageController, :contacts
     get "/masters/:id/gallery", GalleryController, :get_photo_by_master_id

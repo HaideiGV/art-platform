@@ -4,6 +4,7 @@ defmodule ArtPlatform.GalleryController do
   import Ecto.Query
 
   alias ArtPlatform.Gallery
+  alias ArtPlatform.Masters
 
   def index(conn, _params) do
     gallery = Repo.all(Gallery)
