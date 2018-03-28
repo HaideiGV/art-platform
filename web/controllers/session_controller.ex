@@ -44,6 +44,10 @@ defmodule ArtPlatform.SessionController do
     render conn, "new.html"
   end
 
+  def create(conn, %{"session" => %{"email" => email,
+                                    "password" => password}}) do
+  end
+
   def delete(conn, _) do
     conn
     |> logout

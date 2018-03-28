@@ -20,19 +20,15 @@
       <div class="nav green">
         <ul class="centre">
           <li><a class="header-link" href="/">Platform</a></li>
-          <li>
-            <%= link "Masters", to: master_path(@conn, :index), class: "header-link" %>
-          </li>
+          <li><a class="header-link" href="/masters">Masters</a></li>
           <li><a class="header-link" href="/gallery">Gallery</a></li>
           <li><a class="header-link" href="/contacts">Contacts</a></li>
           <li><a class="header-link"  href="/about">About</a></li>
 <<<<<<< HEAD
           <%= if @current_user do %>
+            <li><%= @current_user.email %> (<%= @current_user.id %>)</li>
             <li>
               <%= link "Sign out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
-            </li>
-            <li>
-              <%= link @current_user.username, to: user_path(@conn, :show, @current_user.id), class: "username" %>
             </li>
           <% else %>
             <li>

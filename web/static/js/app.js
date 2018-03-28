@@ -1,38 +1,21 @@
+// Brunch automatically concatenates all files in your
+// watched paths. Those paths can be configured at
+// config.paths.watched in "brunch-config.js".
+//
+// However, those files will only be executed if
+// explicitly imported. The only exception are files
+// in vendor, which are never wrapped in imports and
+// therefore are always executed.
+
+// Import dependencies
+//
+// If you no longer want to use a dependency, remember
+// to also remove its path from "config.paths.watched".
 import "phoenix_html"
-window.csrfToken = '<%= get_csrf_token() %>'
 
-$(document).ready(function() {
-  $(".like").click(function(){
-      var master_id = $(this).attr("data-rate");
-      $.ajax({
-      type : "PATCH",
-      url: '/masters/' + master_id,
-      data : JSON.stringify({action: 'like'}),
-      headers : new window.Headers({
-        'x-csrf-token': window.csrfToken,
-        "Access-Control-Allow-Methods": "PATCH"
-      }),
-      function(data){
-          $('#like_count'+master_id).html(data);
-      }
-    });
-  });
-});
+// Import local files
+//
+// Local files can be imported directly using relative
+// paths "./socket" or full ones "web/static/js/socket".
 
-$(document).ready(function() {
-  $(".dislike").click(function(){
-      var master_id = $(this).attr("data-rate");
-      $.ajax({
-        type : "PATCH",
-        url : '/masters/' + master_id,
-        data : JSON.stringify({action: 'dislike'}),
-        headers : new window.Headers({
-          'x-csrf-token': window.csrfToken,
-          "Access-Control-Allow-Methods": "PATCH"
-        }),
-        function(data){
-            $('#like_count'+master_id).html(data);
-        }
-      });
-    });
-});
+// import socket from "./socket"

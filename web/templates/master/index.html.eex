@@ -32,14 +32,6 @@
             <span class="master-label">Rank: </span><%= master.rank %>
             <span><a class="rank-label-up" href="#">&#8679;</a></span>
             <span><a class="rank-label-down" href="#">&#8681;</a></span>
-            <%= link "up", to: master_path(@conn, :edit, master), class: "waves-effect" %>
-            <button class="btn btn-mini btn-success like" name="up" data-rate=<%= master.id %>>
-              Like
-            </button>
-            <%= link "up", to: master_path(@conn, :edit, master), class: "waves-effect"%>
-            <button class="btn btn-mini btn-danger dislike" name="down" data-rate=<%= master.id %>>
-              Dislike
-            </button>
           </div>
           <div><span class="master-label">City: </span><%= master.city %></div>
           <div>

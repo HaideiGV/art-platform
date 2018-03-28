@@ -86,12 +86,8 @@ body {
 	padding-top: 2em;
 	padding-left: 2em;
 	padding-bottom: 1em;
-}
-
-.username{
-	font-size: 16px;
-	font-weight: bold;
-	color: black;
+	border-radius: 2em;
+	border: dotted;
 }
 =======
 >>>>>>> parent of 098a6df... added session
